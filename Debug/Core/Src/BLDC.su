@@ -1,0 +1,5 @@
+../Core/Src/BLDC.c:27:6:PWM_Timers_Init	8	static
+../Core/Src/BLDC.c:42:6:motorstartinit	8	static
+../Core/Src/BLDC.c:58:10:adc_to_pwm	24	static
+../Core/Src/BLDC.c:68:6:HallSensorsGetPosition	4	static
+../Core/Src/BLDC.c:96:6:commutate	8	static
