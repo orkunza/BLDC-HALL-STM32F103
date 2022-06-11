@@ -100,8 +100,8 @@ static void MX_TIM2_Init(void);
 static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
 
-void Buzzer_Beep(void);
-void Buzzer_Beep_Beep(void);
+void Buzzer_Beep(uint16_t tone);
+void Buzzer_Beep_Beep(uint16_t tone);
 void HallSensorsGetPosition(void);
 
 /* USER CODE END PFP */
@@ -185,8 +185,7 @@ int main(void)
 	HallSensorsGetPosition();
 
 	/* Buzzer off */
-	BUZZER_SET_DUTY = 49; // when 99 is %100
-	Buzzer_Beep_Beep();
+	Buzzer_Beep_Beep(49);
 
 	/* Motor start init */
 	motorstartinit();
@@ -706,12 +705,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
 }
 
-void Buzzer_Beep(void){
+void Buzzer_Beep(uint16_t tone){
+	BUZZER_SET_DUTY = tone; // when 99 is %100
 	BUZZER_START;
 	HAL_Delay(40);
 	BUZZER_STOP;
 }
-void Buzzer_Beep_Beep(void){
+void Buzzer_Beep_Beep(uint16_t tone){
+	BUZZER_SET_DUTY = tone; // when 99 is %100
 	BUZZER_START;
 	HAL_Delay(40);
 	BUZZER_STOP;
