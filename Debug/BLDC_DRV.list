@@ -777,7 +777,7 @@ int main(void)
  80005f4:	4603      	mov	r3, r0
  80005f6:	2b00      	cmp	r3, #0
  80005f8:	d004      	beq.n	8000604 <main+0x158>
-			BUZZER_START;
+			BUZZER_START; // buton for buzzer
  80005fa:	2100      	movs	r1, #0
  80005fc:	4806      	ldr	r0, [pc, #24]	; (8000618 <main+0x16c>)
  80005fe:	f004 fd05 	bl	800500c <HAL_TIM_PWM_Start>
@@ -1990,7 +1990,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 08000d2c <Buzzer_Beep_Beep>:
 void Buzzer_Beep(void){
 	BUZZER_START;
-	HAL_Delay(10);
+	HAL_Delay(40);
 	BUZZER_STOP;
 }
 void Buzzer_Beep_Beep(void){
@@ -2000,8 +2000,8 @@ void Buzzer_Beep_Beep(void){
  8000d30:	2100      	movs	r1, #0
  8000d32:	480d      	ldr	r0, [pc, #52]	; (8000d68 <Buzzer_Beep_Beep+0x3c>)
  8000d34:	f004 f96a 	bl	800500c <HAL_TIM_PWM_Start>
-	HAL_Delay(30);
- 8000d38:	201e      	movs	r0, #30
+	HAL_Delay(40);
+ 8000d38:	2028      	movs	r0, #40	; 0x28
  8000d3a:	f002 f94b 	bl	8002fd4 <HAL_Delay>
 	BUZZER_STOP;
  8000d3e:	2100      	movs	r1, #0
@@ -2014,8 +2014,8 @@ void Buzzer_Beep_Beep(void){
  8000d4c:	2100      	movs	r1, #0
  8000d4e:	4806      	ldr	r0, [pc, #24]	; (8000d68 <Buzzer_Beep_Beep+0x3c>)
  8000d50:	f004 f95c 	bl	800500c <HAL_TIM_PWM_Start>
-	HAL_Delay(30);
- 8000d54:	201e      	movs	r0, #30
+	HAL_Delay(40);
+ 8000d54:	2028      	movs	r0, #40	; 0x28
  8000d56:	f002 f93d 	bl	8002fd4 <HAL_Delay>
 	BUZZER_STOP;
  8000d5a:	2100      	movs	r1, #0

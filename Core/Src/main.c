@@ -247,7 +247,7 @@ int main(void)
 
 		//* Buzzer Off *//
 		if(HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin)){
-			BUZZER_START;
+			BUZZER_START; // buton for buzzer
 		}
 		else {
 			BUZZER_STOP;
@@ -708,16 +708,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void Buzzer_Beep(void){
 	BUZZER_START;
-	HAL_Delay(10);
+	HAL_Delay(40);
 	BUZZER_STOP;
 }
 void Buzzer_Beep_Beep(void){
 	BUZZER_START;
-	HAL_Delay(30);
+	HAL_Delay(40);
 	BUZZER_STOP;
 	HAL_Delay(50);
 	BUZZER_START;
-	HAL_Delay(30);
+	HAL_Delay(40);
 	BUZZER_STOP;
 }
 
